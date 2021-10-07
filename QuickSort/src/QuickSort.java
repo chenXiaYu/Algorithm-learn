@@ -1,3 +1,5 @@
+import itcast.Quick;
+
 import java.util.Arrays;
 
 /**
@@ -15,8 +17,13 @@ public class QuickSort {
 
     public static void main(String[] args) throws Exception {
         int[] data = DataUtils.getData();
+        Integer[] data2 = DataUtils.getDataInteger();
+        System.out.println("开始排序");
+        long start = System.currentTimeMillis();
+       // Quick.sort(data2);
         sort(data);
-        System.out.println(Arrays.toString(data));
+        System.out.println(System.currentTimeMillis()-start);
+      // System.out.println(Arrays.toString(data));
     }
 
 
@@ -72,12 +79,10 @@ public class QuickSort {
           //继续分裂
 
           if((start-startbak-1)>=1){
-              System.out.println(startbak +"-------" +( start-1));
               sort(arry,startbak,start-1);
 
           }
           if((endbak-start-1 )>=1){
-              System.out.println((start+1) +"======" +( endbak));
               sort(arry,start+1,endbak);
 
           }

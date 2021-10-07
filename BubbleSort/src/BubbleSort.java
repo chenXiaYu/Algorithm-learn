@@ -5,10 +5,18 @@ import java.util.Arrays;
  */
 public class BubbleSort {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        int [] arry =  {9,8,7,6,3,2,1,1,2,4,5,63,32,3};
+        int[] data = DataUtils.getData();
+        long l = System.currentTimeMillis();
+        sort(data);
+        System.out.println(System.currentTimeMillis()-l);
 
+       // System.out.println(Arrays.toString(data));
+
+    }
+
+    public  static  void  sort(int[] arry){
         // 注意这种写法的时候最大值放在最左边，最左边的数据是排好序的了
         for(int i = 0; i < arry.length; i++){
             int index = i + 1 ;
@@ -18,11 +26,7 @@ public class BubbleSort {
                 }
             }
         }
-
-        System.out.println(Arrays.toString(arry));
-
     }
-
 
 
 
